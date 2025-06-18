@@ -1,8 +1,6 @@
 *** Settings ***
-Library     SeleniumLibrary
-Library     Screenshot
-Library     XML
-Resource    ../../PageObject/setup_teardown.robot
+Resource    ../../Settings/main.robot
+Resource    LocatorsLogin.robot
 
 *** Variables ***
 ${USUARIO_VALIDO}                    john

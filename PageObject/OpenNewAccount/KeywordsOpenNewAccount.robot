@@ -1,10 +1,6 @@
 *** Settings ***
-Library     SeleniumLibrary
-Library     Screenshot
-Library     XML
-Resource    ../../PageObject/setup_teardown.robot
-Resource    ../../PageObject/AbrirNovaConta/LocatorsAbrirNovaConta.robot
-
+Resource    ../../Settings/main.robot
+Resource    LocatorsOpenNewAccount.robot
 
 *** Keywords ***
 Quando desejo abrir uma nova conta com as opções válidas

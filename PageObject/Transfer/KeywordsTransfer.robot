@@ -1,10 +1,6 @@
 *** Settings ***
-Library     SeleniumLibrary
-# Library     AngularJSLibrary
-Library     Screenshot
-Library     XML
-Resource    ../../PageObject/setup_teardown.robot
-Library     Screenshot
+Resource    ../../Settings/main.robot
+Resource    LocatorsTransfer.robot
 
 *** Variables ***
 ${VALOR_TRANSFERENCIA}                                          900

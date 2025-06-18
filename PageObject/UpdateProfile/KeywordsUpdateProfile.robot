@@ -1,9 +1,6 @@
 *** Settings ***
-Library     SeleniumLibrary
-Library     Screenshot
-Library     XML
-Resource    ../../PageObject/setup_teardown.robot
-Resource    ../../PageObject/AtualizacaoPerfil/LocatorsAtualizacaoPerfil.robot
+Resource    ../../Settings/main.robot
+Resource    LocatorsUpdateProfile.robot
 
 *** Keywords ***
 

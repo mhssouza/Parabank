@@ -1,9 +1,6 @@
 *** Settings ***
-Library     SeleniumLibrary
-Library     Screenshot
-Library     XML
-Resource    ../PageObject/setup_teardown.robot
-Resource    ../Resources/ResourcesLogin/VariaveisLogin.robot
+Resource             ../../Settings/main.robot
+Resource             ../../PageObject/Login/KeywordsLogin.robot
 
 *** Keywords ***
 Dado que o usuário fizer login com Sucesso

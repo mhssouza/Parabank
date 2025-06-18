@@ -1,6 +1,9 @@
 *** Settings ***
 Resource             ../../Settings/main.robot
 Resource             KeywordsTransfer.robot   
+Test Setup        Dado que eu acesse o site Parabank
+Test Teardown     Fechar o navegador
+
 
 *** Test Cases ***
 QBEF-01 Tranferência com sucesso

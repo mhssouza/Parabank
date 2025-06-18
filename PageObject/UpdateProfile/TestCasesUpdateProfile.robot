@@ -1,6 +1,9 @@
 *** Settings ***
 Resource             ../../Settings/main.robot
 Resource             KeywordsUpdateProfile.robot
+Test Setup        Dado que eu acesse o site Parabank
+Test Teardown     Fechar o navegador
+
 
 *** Test Cases ***
 

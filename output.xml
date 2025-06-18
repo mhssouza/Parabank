@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2025-06-18T08:37:15.701357" rpa="false" schemaversion="5">
+<suite id="s1" name="Testes Login" source="c:\Users\v8\Documents\VS Code\V8TECH\Parabank\TestCases\testes_login.robot">
+<test id="s1-t1" name="QBEF-01 Login com sucesso" line="7">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-18T08:37:16.866351" level="INFO">Opening browser 'chrome' to base url 'https://parabank.parasoft.com/parabank/index.htm'.</msg>
+<arg>url=${BASE_URL}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-18T08:37:16.865353" elapsed="10.873441"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-18T08:37:27.740801" elapsed="0.088165"/>
+</kw>
+<status status="PASS" start="2025-06-18T08:37:16.860351" elapsed="10.968615"/>
+</kw>
+<kw name="Dado que o usuário preenche o campo de login com as credenciais" owner="VariaveisLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-18T08:37:27.830966" elapsed="0.269074"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-18T08:37:28.102061" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-18T08:37:28.101061" elapsed="0.324357"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-18T08:37:28.426437" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-18T08:37:28.425418" elapsed="0.367708"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-18T08:37:28.795127" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-18T08:37:28.793126" elapsed="2.328968"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-06-18T08:37:27.829968" elapsed="3.292126"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="VariaveisLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-18T08:37:31.124101" elapsed="0.035570"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-06-18T08:37:31.192646" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-18T08:37:31.160661" elapsed="0.031985"/>
+</kw>
+<status status="PASS" start="2025-06-18T08:37:31.123099" elapsed="0.069547"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-18T08:37:31.194650" elapsed="2.340034"/>
+</kw>
+<status status="PASS" start="2025-06-18T08:37:31.193648" elapsed="2.342161"/>
+</kw>
+<tag>Login</tag>
+<status status="PASS" start="2025-06-18T08:37:16.857349" elapsed="16.680194"/>
+</test>
+<status status="PASS" start="2025-06-18T08:37:15.718917" elapsed="17.823678"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Login</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testes Login">Testes Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

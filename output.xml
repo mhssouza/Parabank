@@ -1,146 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-20T11:04:29.057145" rpa="false" schemaversion="5">
-<suite id="s1" name="TestCasesOpenNewAccount" source="c:\Users\marqu\OneDrive\Documentos\Parabank\PageObject\OpenNewAccount\TestCasesOpenNewAccount.robot">
-<test id="s1-t1" name="QBEF-01 Abrir uma nova conta com Sucesso" line="10">
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2025-06-20T13:55:26.040748" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCasesTransfer" source="c:\Users\v8\Documents\VS Code\V8TECH\Parabank\PageObject\Transfer\TestCasesTransfer.robot">
+<test id="s1-t1" name="QBEF-01 Tranferência com sucesso" line="9">
 <kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:29.471682" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<msg time="2025-06-20T13:55:27.016340" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
 <arg>url=${URL_DEV}</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-20T11:04:29.471248" elapsed="4.235196"/>
+<status status="PASS" start="2025-06-20T13:55:27.015354" elapsed="5.058991"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-20T11:04:33.706832" elapsed="0.042274"/>
+<status status="PASS" start="2025-06-20T13:55:32.075608" elapsed="0.085124"/>
 </kw>
-<status status="PASS" start="2025-06-20T11:04:29.470368" elapsed="4.279024"/>
+<status status="PASS" start="2025-06-20T13:55:27.013312" elapsed="5.148441"/>
 </kw>
 <kw name="Dado que o usuário fizer login com Sucesso" owner="Common">
-<kw name="Quando o usuário preenche o campo de login com as credenciais" owner="KeywordsLogin">
+<kw name="Quando o usuário preencher os campos de login" owner="KeywordsLogin">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:33.751853" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<msg time="2025-06-20T13:55:32.174368" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
 <arg>${CAMPO_USUARIO}</arg>
 <arg>${usuario}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-20T11:04:33.751322" elapsed="0.167614"/>
+<status status="PASS" start="2025-06-20T13:55:32.172858" elapsed="0.291172"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:33.919765" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<msg time="2025-06-20T13:55:32.465993" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
 <arg>${CAMPO_SENHA}</arg>
 <arg>${senha}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-20T11:04:33.919321" elapsed="0.091107"/>
+<status status="PASS" start="2025-06-20T13:55:32.465008" elapsed="0.353903"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:34.011002" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<msg time="2025-06-20T13:55:32.820852" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
 <arg>${BOTAO_LOGIN}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-20T11:04:34.010711" elapsed="0.777278"/>
+<status status="PASS" start="2025-06-20T13:55:32.819845" elapsed="1.306891"/>
 </kw>
 <arg>${USUARIO_VALIDO}</arg>
 <arg>${SENHA_VALIDO}</arg>
-<status status="PASS" start="2025-06-20T11:04:33.750791" elapsed="1.037490"/>
+<status status="PASS" start="2025-06-20T13:55:32.168326" elapsed="1.959397"/>
 </kw>
 <kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${BTN_LOGOUT}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-20T11:04:34.788832" elapsed="0.027083"/>
+<status status="PASS" start="2025-06-20T13:55:34.127723" elapsed="0.068526"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:34.831652" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<msg time="2025-06-20T13:55:34.246215" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
 <arg>${BTN_LOGOUT}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-20T11:04:34.816179" elapsed="0.015726"/>
+<status status="PASS" start="2025-06-20T13:55:34.196249" elapsed="0.049966"/>
 </kw>
-<status status="PASS" start="2025-06-20T11:04:34.788505" elapsed="0.043532"/>
+<status status="PASS" start="2025-06-20T13:55:34.127723" elapsed="0.119514"/>
 </kw>
-<status status="PASS" start="2025-06-20T11:04:33.750168" elapsed="1.081954"/>
+<status status="PASS" start="2025-06-20T13:55:32.163758" elapsed="2.083479"/>
 </kw>
-<kw name="Quando desejo abrir uma nova conta com as opções válidas" owner="KeywordsOpenNewAccount">
+<kw name="Quando o usuário for para a página de transferência" owner="KeywordsTransfer">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LINK_NOVA_CONTA}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-20T11:04:34.832977" elapsed="0.017985"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:34.851532" level="INFO">Clicking element '//*[@id="leftPanel"]/ul/li[1]/a'.</msg>
-<arg>${LINK_NOVA_CONTA}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-20T11:04:34.851245" elapsed="0.329148"/>
-</kw>
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:35.181481" level="INFO">Selecting options from selection list '//*[@id="type"]' by label CHECKING.</msg>
-<arg>${SELECT_TIPO_CONTA}</arg>
-<arg>${TIPO_CONTA}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2025-06-20T11:04:35.180845" elapsed="0.070927"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-20T11:04:36.253207" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-20T11:04:35.252044" elapsed="1.001740"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:36.255036" level="INFO">Clicking button 'css:input[type="button"][value="Open New Account"]'.</msg>
-<arg>${BOTAO_ABRIR_CONTA}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-20T11:04:36.254293" elapsed="0.065700"/>
-</kw>
-<status status="PASS" start="2025-06-20T11:04:34.832597" elapsed="1.487628"/>
-</kw>
-<kw name="Então o sistema deve exibir uma mensagem de sucesso com o número da nova conta" owner="KeywordsOpenNewAccount">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${MENSAGEM_SUCESSO_CONTA}</arg>
+<arg>${BTN_TRANSFERENCIA}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-20T11:04:36.321428" elapsed="0.468545"/>
+<status status="PASS" start="2025-06-20T13:55:34.249249" elapsed="0.053070"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:36.804177" level="INFO">Element '//*[@id="openAccountResult"]/h1' is displayed.</msg>
-<arg>${MENSAGEM_SUCESSO_CONTA}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-20T11:04:36.790746" elapsed="0.013655"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:34.303362" level="INFO">Clicking element 'css:a[href="transfer.htm"]'.</msg>
+<arg>${BTN_TRANSFERENCIA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-20T13:55:34.302319" elapsed="0.960118"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${NUMERO_NOVA_CONTA}</arg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-20T11:04:36.804594" elapsed="0.016384"/>
+<status status="PASS" start="2025-06-20T13:55:35.262437" elapsed="0.056813"/>
+</kw>
+<status status="PASS" start="2025-06-20T13:55:34.249249" elapsed="1.070001"/>
+</kw>
+<kw name="E preencher os campos de transferência com os dados" owner="KeywordsTransfer">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:35.320814" level="INFO">Clicking element 'css:select[id="fromAccountId"]'.</msg>
+<arg>${OPTION_CONTA_ORIGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-20T13:55:35.320814" elapsed="0.217286"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:35.538100" level="INFO">Selecting options from selection list 'css:select[id="fromAccountId"]' by value 13344.</msg>
+<arg>${OPTION_CONTA_ORIGEM}</arg>
+<arg>${conta_origem}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-06-20T13:55:35.538100" elapsed="0.107279"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:35.646423" level="INFO">Clicking element 'css:select[id="toAccountId"]'.</msg>
+<arg>${OPTION_CONTA_DESTINO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-20T13:55:35.645379" elapsed="0.282716"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:35.928095" level="INFO">Selecting options from selection list 'css:select[id="toAccountId"]' by value 13344.</msg>
+<arg>${OPTION_CONTA_DESTINO}</arg>
+<arg>${conta_destino}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-06-20T13:55:35.928095" elapsed="0.140339"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:36.069442" level="INFO">Typing text '900' into text field 'css:input[id="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-20T13:55:36.069442" elapsed="0.337469"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:36.407904" level="INFO">Clicking button 'css:input[type="submit"][value="Transfer"]'.</msg>
+<arg>${BTN_TRANSFERIR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-20T13:55:36.406911" elapsed="0.252597"/>
+</kw>
+<arg>${CONTA_ORIGEM}</arg>
+<arg>${CONTA_DESTINO}</arg>
+<arg>${VALOR_TRANSFERENCIA}</arg>
+<status status="PASS" start="2025-06-20T13:55:35.319250" elapsed="1.341832"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de sucesso" owner="KeywordsTransfer">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_SUCESSO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-20T13:55:36.665122" elapsed="0.320940"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-20T11:04:36.832169" level="INFO">Element '//*[@id="newAccountId"]' is displayed.</msg>
-<arg>${NUMERO_NOVA_CONTA}</arg>
+<msg time="2025-06-20T13:55:37.033530" level="INFO">Element 'css:div[id="showResult"]' is displayed.</msg>
+<arg>${MENSAGEM_SUCESSO}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-20T11:04:36.821245" elapsed="0.011169"/>
+<status status="PASS" start="2025-06-20T13:55:36.986062" elapsed="0.047468"/>
 </kw>
-<status status="PASS" start="2025-06-20T11:04:36.320841" elapsed="0.511702"/>
+<status status="PASS" start="2025-06-20T13:55:36.663112" elapsed="0.371514"/>
+</kw>
+<kw name="E a tranferência deve ser registrada" owner="KeywordsTransfer">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:37.037625" level="INFO">Clicking element 'css:a[href="overview.htm"]'.</msg>
+<arg>${BTN_OVERVIEW}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-20T13:55:37.037625" elapsed="0.568451"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PAINEL_DIREITA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-20T13:55:37.607071" elapsed="0.057721"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_TRANSFERENCIA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-20T13:55:37.664792" elapsed="0.062594"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-20T13:55:42.729997" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-20T13:55:37.728388" elapsed="5.002755"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-06-20T13:55:42.829276" level="INFO">Element 'css:table[id="accountTable"]' contains text '13344'.</msg>
+<arg>${TABELA_TRANSFERENCIA}</arg>
+<arg>${conta_origem}</arg>
+<arg>${conta_destino}</arg>
+<arg>${quantidade}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-06-20T13:55:42.731697" elapsed="0.099120"/>
+</kw>
+<arg>${CONTA_ORIGEM}</arg>
+<arg>${CONTA_DESTINO}</arg>
+<arg>${VALOR_TRANSFERENCIA}</arg>
+<status status="PASS" start="2025-06-20T13:55:37.035638" elapsed="5.795179"/>
 </kw>
 <kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-20T11:04:36.833791" elapsed="2.135125"/>
+<status status="PASS" start="2025-06-20T13:55:42.834971" elapsed="2.376504"/>
 </kw>
-<status status="PASS" start="2025-06-20T11:04:36.833301" elapsed="2.135935"/>
+<status status="PASS" start="2025-06-20T13:55:42.832341" elapsed="2.380222"/>
 </kw>
-<tag>new-account</tag>
 <tag>Positive</tag>
-<status status="PASS" start="2025-06-20T11:04:29.469279" elapsed="9.503311"/>
+<tag>Transfer</tag>
+<status status="PASS" start="2025-06-20T13:55:27.009882" elapsed="18.203156"/>
 </test>
-<status status="PASS" start="2025-06-20T11:04:29.062094" elapsed="9.917237"/>
+<status status="PASS" start="2025-06-20T13:55:26.050846" elapsed="19.166205"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">new-account</stat>
 <stat pass="1" fail="0" skip="0">Positive</stat>
+<stat pass="1" fail="0" skip="0">Transfer</stat>
 </tag>
 <suite>
-<stat name="TestCasesOpenNewAccount" id="s1" pass="1" fail="0" skip="0">TestCasesOpenNewAccount</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestCasesTransfer">TestCasesTransfer</stat>
 </suite>
 </statistics>
 <errors>

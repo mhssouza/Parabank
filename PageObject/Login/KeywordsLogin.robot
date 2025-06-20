@@ -16,7 +16,7 @@ Dado que o usuário esteja na tela de Login
     Wait Until Element Is Visible    ${CAMPO_SENHA}            10s
     Element Should Be Visible        ${CAMPO_SENHA}
 
-Quando o usuário preenche o campo de login com as credenciais
+Quando o usuário preencher os campos de login
     [Arguments]                      ${usuario}                ${senha}
     Input Text                       ${CAMPO_USUARIO}          ${usuario}
     Input Text                       ${CAMPO_SENHA}            ${senha}
@@ -26,6 +26,6 @@ Então deve ser redirecionado para a página inicial
     Wait Until Element Is Visible    ${BTN_LOGOUT}             10s
     Element Should Be Visible        ${BTN_LOGOUT}
 
-Então deve mostrar uma mensagem de erro
+Então deve ver uma mensagem de erro de login
     Wait Until Element Is Visible    ${MENSAGEM_ERRO1}         10s
     Element Should Be Enabled        ${MENSAGEM_ERRO1}

@@ -2,7 +2,6 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${BASE_URL}               https://parabank.parasoft.com/parabank/index.htm
 ${MENSAGEM_ERRO2}         css:div[id="showError"]
 ${BTN_TRANSFERENCIA}      css:a[href="transfer.htm"]
 ${CAMPO_QUANTIDADE}       css:input[id="amount"]

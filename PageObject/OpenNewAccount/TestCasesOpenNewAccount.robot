@@ -5,7 +5,6 @@ Test Setup        Dado que eu acesse o site Parabank
 Test Teardown     Fechar o navegador
 
 
-
 *** Test Cases ***
 
 QBEF-01 Abrir uma nova conta com Sucesso

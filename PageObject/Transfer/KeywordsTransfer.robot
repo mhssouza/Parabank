@@ -14,7 +14,7 @@ Quando o usuário for para a página de transferência
     Wait Until Element Is Visible    ${BTN_TRANSFERENCIA}       10s
     Click Element                    ${BTN_TRANSFERENCIA}
     Wait Until Element Is Visible    ${CAMPO_QUANTIDADE}        10s
-    Take Screenshot
+   
 
 E preencher os campos de transferência com os dados
     [Arguments]                      ${conta_origem}            ${conta_destino}          ${quantidade}
@@ -24,13 +24,13 @@ E preencher os campos de transferência com os dados
     Select From List By Value        ${OPTION_CONTA_DESTINO}    ${conta_destino}
     Input Text                       ${CAMPO_QUANTIDADE}        ${quantidade}
     Click Button                     ${BTN_TRANSFERIR}
-    Take Screenshot                  dados_preenchidos_transferencia.png
+
     
 
 Então deve mostrar uma mensagem de sucesso
     Wait Until Element Is Visible    ${MENSAGEM_SUCESSO}        10s
     Element Should Be Visible        ${MENSAGEM_SUCESSO}
-    Take Screenshot
+    
 
 E a tranferência deve ser registrada
     [Arguments]                      ${conta_origem}            ${conta_destino}           ${quantidade}
@@ -39,9 +39,7 @@ E a tranferência deve ser registrada
     Wait Until Element Is Visible    ${TABELA_TRANSFERENCIA}    10s
     Sleep                            5s
     Element Should Contain           ${TABELA_TRANSFERENCIA}    ${conta_origem}            ${conta_destino}          ${quantidade}
-    Take Screenshot
 
 Então deve mostrar uma mensagem de erro pra transferência
     Wait Until Element Is Visible    ${MENSAGEM_ERRO2}           10s
     Element Should Be Enabled        ${MENSAGEM_ERRO2}
-    Take Screenshot

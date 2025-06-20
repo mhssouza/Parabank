@@ -2,6 +2,11 @@
 Resource    ../../Settings/main.robot
 Resource    LocatorsUpdateProfile.robot
 
+*** Variables ***
+${LASTNAME}    Macedo
+${STREET}      Avenida Paulista
+
+
 *** Keywords ***
 
 E desejo atualizar as informações do meu perfil
@@ -10,9 +15,9 @@ E desejo atualizar as informações do meu perfil
 
 Quando atualizo os campos corretamente
     Sleep    2s
-    Input Text    ${INPUT_LASTNAME}    Macedo
+    Input Text    ${INPUT_LASTNAME}    ${LASTNAME}
     Sleep    2s
-    Input Text    ${INPUT_STREET}      Avenida Paulista
+    Input Text    ${INPUT_STREET}      ${STREET}
     Click Button    ${BOTAO_SALVAR}
 
 Então o sistema deve exibir uma mensagem sobre a atualização

@@ -2,7 +2,6 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${BASE_URL}               https://parabank.parasoft.com/parabank/index.htm
 ${CAMPO_USUARIO}          css:input[name="username"]
 ${CAMPO_SENHA}            css:input[name="password"]
 ${BOTAO_LOGIN}            css:input[type='submit'][value="Log In"]

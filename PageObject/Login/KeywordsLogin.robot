@@ -9,9 +9,15 @@ ${USUARIO_INVALIDO}                  Teste
 ${SENHA_INVALIDO}                    Teste
 
 *** Keywords ***
-Dado que o usuário preenche o campo de login com as credenciais
+
+Dado que o usuário esteja na tela de Login
+    Wait Until Element Is Visible    ${CAMPO_USUARIO}          10s
+    Element Should Be Visible        ${CAMPO_USUARIO}          
+    Wait Until Element Is Visible    ${CAMPO_SENHA}            10s
+    Element Should Be Visible        ${CAMPO_SENHA}
+
+Quando o usuário preenche o campo de login com as credenciais
     [Arguments]                      ${usuario}                ${senha}
-    Wait Until Element Is Visible    ${CAMPO_USUARIO}          10s    
     Input Text                       ${CAMPO_USUARIO}          ${usuario}
     Input Text                       ${CAMPO_SENHA}            ${senha}
     Click Button                     ${BOTAO_LOGIN}

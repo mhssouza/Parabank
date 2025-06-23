@@ -17,5 +17,6 @@ Quando desejo abrir uma nova conta com as opções válidas
 Então o sistema deve exibir uma mensagem de sucesso com o número da nova conta
     Wait Until Element Is Visible    ${MENSAGEM_SUCESSO_CONTA}    10s
     Element Should Be Visible        ${MENSAGEM_SUCESSO_CONTA}
+    Capturar Print Na Pasta Da Funcionalidade    QBEF-01      PageObject/OpenNewAccount/Screenshots
     Wait Until Element Is Visible    ${NUMERO_NOVA_CONTA}
     Element Should Be Visible        ${NUMERO_NOVA_CONTA}

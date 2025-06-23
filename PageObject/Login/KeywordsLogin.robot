@@ -5,8 +5,8 @@ Resource    LocatorsLogin.robot
 *** Variables ***
 ${USUARIO_VALIDO}                    john
 ${SENHA_VALIDO}                      demo
-${USUARIO_INVALIDO}                  Teste
-${SENHA_INVALIDO}                    Teste
+${USUARIO_INVALIDO}                  teste
+${SENHA_INVALIDO}                    teste
 
 *** Keywords ***
 
@@ -20,6 +20,7 @@ Quando o usuário preencher os campos de login
     [Arguments]                      ${usuario}                ${senha}
     Input Text                       ${CAMPO_USUARIO}          ${usuario}
     Input Text                       ${CAMPO_SENHA}            ${senha}
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-02      PageObject/Login/Screenshots
     Click Button                     ${BOTAO_LOGIN}
 
 Então deve ser redirecionado para a página inicial

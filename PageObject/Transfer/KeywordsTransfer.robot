@@ -10,6 +10,14 @@ ${CONTA_ORIGEM}                                                13344
 ${CONTA_DESTINO}                                               13344
 
 *** Keywords ***
+Dado que o usuário esteja na página de transferência
+    Fazer login com Sucesso
+    Wait Until Element Is Visible    ${PAINEL_ESQUERA}          10s
+    Element Should Be Visible        ${PAINEL_ESQUERA}
+    Click Element                    ${BTN_OVERVIEW}
+    Wait Until Element Is Visible    ${PAINEL_DIREITA}          10s
+    Element Should Be Visible        ${PAINEL_DIREITA}
+
 Quando o usuário for para a página de transferência
     Wait Until Element Is Visible    ${BTN_TRANSFERENCIA}       10s
     Click Element                    ${BTN_TRANSFERENCIA}

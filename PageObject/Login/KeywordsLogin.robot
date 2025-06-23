@@ -20,8 +20,8 @@ Quando o usuário preencher os campos de login
     [Arguments]                      ${usuario}                ${senha}
     Input Text                       ${CAMPO_USUARIO}          ${usuario}
     Input Text                       ${CAMPO_SENHA}            ${senha}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-02      PageObject/Login/Screenshots
     Click Button                     ${BOTAO_LOGIN}
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-02     PageObject/Login/Screenshots
 
 Então deve ser redirecionado para a página inicial
     Wait Until Element Is Visible    ${BTN_LOGOUT}             10s

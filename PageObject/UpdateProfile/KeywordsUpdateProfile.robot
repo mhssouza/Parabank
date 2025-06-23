@@ -19,6 +19,7 @@ Quando atualizo os campos corretamente
     Sleep    2s
     Input Text    ${INPUT_STREET}      ${STREET}
     Click Button    ${BOTAO_SALVAR}
+    Capturar Print Na Pasta Da Funcionalidade    QBEF-01   PageObject/UpdateProfile/Screenshots
 
 Então o sistema deve exibir uma mensagem sobre a atualização
     Sleep    3s
@@ -35,3 +36,4 @@ Então uma mensagem de erro sobre os campos vazios deve ser exibida
     Sleep    1s
     Element Should Be Visible    ${ERRO_LASTNAME}
     Element Should Be Visible    ${ERRO_STREET}    
+    Capturar Print Na Pasta Da Funcionalidade    QBEF-02    PageObject/UpdateProfile/Screenshots

@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.0 (Python 3.12.1 on win32)" name="Generator">
+<meta content="Robot Framework 7.3 (Python 3.13.3 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -1252,58 +1252,48 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0) {
+        if (total == 0)
             return [0.0, 0.0, 0.0];
-        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1
+            pass = 0.1;
         if (fail > 0 && fail < 0.1)
-            fail = 0.1
+            fail = 0.1;
         if (skip > 0 && skip < 0.1)
-            skip = 0.1
+            skip = 0.1;
         if (pass > 99.95 && pass < 100)
-            pass = 99.9
+            pass = 99.9;
         if (fail > 99.95 && fail < 100)
-            fail = 99.9
+            fail = 99.9;
         if (skip > 99.95 && skip < 100)
-            skip = 99.9
-        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
+            skip = 99.9;
+        return [round1(pass), round1(skip), round1(fail)];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1
+            num1 = 1.0;
         if (num2 > 0 && num2 < 1)
-            num2 = 1
+            num2 = 1.0;
         if (num3 > 0 && num3 < 1)
-            num3 = 1
+            num3 = 1.0;
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 > num2 && num1 > num3)
-                num1 -= 0.1;
-            else if (num2 > num1 && num2 > num3)
-                num2 -= 0.1;
-            else if (num3 > num1 && num3 > num2)
-                num3 -= 0.1;
-            else if (num1 > num3 && num1 == num2) {
-                num1 -= 0.1;
-                num2 -= 0.1;
-            }
-            else if (num1 > num2 && num1 == num3) {
-                num1 -= 0.1;
-                num3 -= 0.1;
-            }
-            else if (num2 > num1 && num2 == num3) {
-                num2 -= 0.1;
-                num3 -= 0.1;
-            }
+            if (num1 >= num2 && num1 >= num3)
+                num1 = round1(num1 - 0.1);
+            else if (num2 >= num1 && num2 >= num3)
+                num2 = round1(num2 - 0.1);
+            else
+                num3 = round1(num3 - 0.1);
         }
-        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
+        return [num1, num2, num3];
+    }
+    function round1(num) {
+        return Math.round(num*10) / 10;
     }
     return {
         Statistics: Statistics
@@ -1522,7 +1512,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -2081,25 +2071,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,19166],[],[[4,0,0,[5,6],[1,959,18203],[[1,7,8,0,0,0,0,0,[1,962,5148],[[0,9,10,0,11,12,0,0,[1,964,5059],[[965,2,13]]],[0,14,10,0,15,0,0,0,[1,6025,85],[]]]],[0,16,17,0,0,0,0,0,[1,6113,2083],[[0,18,19,0,0,20,0,0,[1,6117,1959],[[0,21,10,0,22,23,0,0,[1,6122,291],[[6123,2,24]]],[0,21,10,0,22,25,0,0,[1,6414,354],[[6415,2,26]]],[0,27,10,0,28,29,0,0,[1,6769,1307],[[6770,2,30]]]]],[0,31,19,0,0,0,0,0,[1,8077,120],[[0,32,10,0,33,34,0,0,[1,8077,69],[]],[0,35,10,0,36,37,0,0,[1,8145,50],[[8195,2,38]]]]]]],[0,39,40,0,0,0,0,0,[1,8198,1070],[[0,32,10,0,33,41,0,0,[1,8198,53],[]],[0,42,10,0,43,44,0,0,[1,8251,960],[[8252,2,45]]],[0,32,10,0,33,46,0,0,[1,9211,57],[]]]],[0,47,40,0,0,48,0,0,[1,9268,1342],[[0,42,10,0,43,49,0,0,[1,9270,217],[[9270,2,50]]],[0,51,10,0,52,53,0,0,[1,9487,107],[[9487,2,54]]],[0,42,10,0,43,55,0,0,[1,9594,283],[[9595,2,56]]],[0,51,10,0,52,57,0,0,[1,9877,140],[[9877,2,58]]],[0,21,10,0,22,59,0,0,[1,10018,337],[[10018,2,60]]],[0,27,10,0,28,61,0,0,[1,10356,253],[[10357,2,62]]]]],[0,63,40,0,0,0,0,0,[1,10612,372],[[0,32,10,0,33,64,0,0,[1,10614,321],[]],[0,35,10,0,36,65,0,0,[1,10935,47],[[10983,2,66]]]]],[0,67,40,0,0,48,0,0,[1,10985,5795],[[0,42,10,0,43,68,0,0,[1,10987,568],[[10987,2,69]]],[0,32,10,0,33,70,0,0,[1,11556,58],[]],[0,32,10,0,33,71,0,0,[1,11614,63],[]],[0,72,73,0,74,75,0,0,[1,11677,5003],[[16679,2,76]]],[0,77,10,0,78,79,0,0,[1,16681,99],[[16778,2,80]]]]],[2,81,8,0,0,0,0,0,[1,16781,2380],[[0,82,10,0,83,0,0,0,[1,16784,2377],[]]]]]]],[],[1,1,0,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,13209],[],[[4,0,0,[5,6],[1,372,12835],[[1,7,8,0,0,0,0,0,[1,374,3423],[[0,9,10,0,11,12,0,0,[1,375,3394],[[375,2,13]]],[0,14,10,0,15,0,0,0,[1,3770,27],[]]]],[0,16,17,0,0,0,0,0,[1,3798,1420],[[0,18,19,0,0,20,0,0,[1,3799,1370],[[0,21,10,0,22,23,0,0,[1,3799,135],[[3800,2,24]]],[0,21,10,0,22,25,0,0,[1,3934,63],[[3935,2,26]]],[0,27,17,0,0,28,0,0,[1,3998,146],[[0,29,10,0,30,31,0,0,[1,3998,146],[[4143,2,32]]]]],[0,33,10,0,34,35,0,0,[1,4144,1024],[[4145,2,36]]]]],[0,37,19,0,0,0,0,0,[1,5169,49],[[0,38,10,0,39,40,0,0,[1,5169,33],[]],[0,41,10,0,42,43,0,0,[1,5203,15],[[5218,2,44]]]]]]],[0,45,46,0,0,0,0,0,[1,5219,326],[[0,38,10,0,39,47,0,0,[1,5219,16],[]],[0,48,10,0,49,47,0,0,[1,5236,309],[[5236,2,50]]]]],[0,51,46,0,0,0,0,0,[1,5546,4157],[[0,52,53,0,54,55,0,0,[1,5546,2001],[[7547,2,56]]],[0,21,10,0,22,57,0,0,[1,7548,62],[[7550,2,58]]],[0,52,53,0,54,55,0,0,[1,7610,2002],[[9611,2,56]]],[0,21,10,0,22,59,0,0,[1,9613,90],[[9614,2,60]]]]],[0,61,46,0,0,0,0,0,[1,9704,1281],[[0,33,10,0,34,62,0,0,[1,9704,60],[[9705,2,63]]],[0,52,53,0,54,64,0,0,[1,9765,1002],[[10766,2,65]]],[0,41,10,0,42,66,0,0,[1,10767,34],[[10800,2,67]]],[0,41,10,0,42,68,0,0,[1,10801,31],[[10832,2,69]]],[0,27,17,0,0,70,0,0,[1,10833,151],[[0,29,10,0,30,31,0,0,[1,10834,150],[[10983,2,71]]]]]]],[2,72,8,0,0,0,0,0,[1,10986,2220],[[0,73,10,0,74,0,0,0,[1,10987,2218],[]]]]]]],[],[1,1,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*TestCasesTransfer","*c:\\Users\\v8\\Documents\\VS Code\\V8TECH\\Parabank\\PageObject\\Transfer\\TestCasesTransfer.robot","eNq9zbEKwjAUheFXkYJrjziVUrtEwU2hsftNPVGrJnBv9Pl18RXcfr7l72RxVcZNFW8PtgBci5NRDe8G2zy9nkzFMA7L9crlMzE2fuf2OIpKkHT/xoWHMHMq8CrJIhWeVpwY7Se15pBL1f9h0kH6DxvnSaI=","*QBEF-01 Tranferência com sucesso","*Positive","*Transfer","*Dado que eu acesse o site Parabank","*setup_teardown","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*url=${URL_DEV}    browser=chrome","*Opening browser 'chrome' to base url '<a href=\"http://parabank.parasoft.com\">http://parabank.parasoft.com\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Dado que o usuário fizer login com Sucesso","*Common","*Quando o usuário preencher os campos de login","*KeywordsLogin","*${USUARIO_VALIDO}    ${SENHA_VALIDO}","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${CAMPO_USUARIO}    ${usuario}","*Typing text 'john' into text field 'css:input[name=\"username\"]'.","*${CAMPO_SENHA}    ${senha}","*Typing text 'demo' into text field 'css:input[name=\"password\"]'.","*Click Button","*<p>Clicks the button identified by <code>locator\x3c/code>.\x3c/p>","*${BOTAO_LOGIN}","*Clicking button 'css:input[type='submit'][value=\"Log In\"]'.","*Então deve ser redirecionado para a página inicial","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${BTN_LOGOUT}    10s","*Element Should Be Visible","*<p>Verifies that the element identified by <code>locator\x3c/code> is visible.\x3c/p>","*${BTN_LOGOUT}","*Element 'css:a[href=\"logout.htm\"]' is displayed.","*Quando o usuário for para a página de transferência","*KeywordsTransfer","*${BTN_TRANSFERENCIA}    10s","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${BTN_TRANSFERENCIA}","*Clicking element 'css:a[href=\"transfer.htm\"]'.","*${CAMPO_QUANTIDADE}    10s","*E preencher os campos de transferência com os dados","*${CONTA_ORIGEM}    ${CONTA_DESTINO}    ${VALOR_TRANSFERENCIA}","*${OPTION_CONTA_ORIGEM}","*Clicking element 'css:select[id=\"fromAccountId\"]'.","*Select From List By Value","*<p>Selects options from selection list <code>locator\x3c/code> by <code>values\x3c/code>.\x3c/p>","*${OPTION_CONTA_ORIGEM}    ${conta_origem}","*Selecting options from selection list 'css:select[id=\"fromAccountId\"]' by value 13344.","*${OPTION_CONTA_DESTINO}","*Clicking element 'css:select[id=\"toAccountId\"]'.","*${OPTION_CONTA_DESTINO}    ${conta_destino}","*Selecting options from selection list 'css:select[id=\"toAccountId\"]' by value 13344.","*${CAMPO_QUANTIDADE}    ${quantidade}","*Typing text '900' into text field 'css:input[id=\"amount\"]'.","*${BTN_TRANSFERIR}","*Clicking button 'css:input[type=\"submit\"][value=\"Transfer\"]'.","*Então deve mostrar uma mensagem de sucesso","*${MENSAGEM_SUCESSO}    10s","*${MENSAGEM_SUCESSO}","*Element 'css:div[id=\"showResult\"]' is displayed.","*E a tranferência deve ser registrada","*${BTN_OVERVIEW}","*Clicking element 'css:a[href=\"overview.htm\"]'.","*${PAINEL_DIREITA}    10s","*${TABELA_TRANSFERENCIA}    10s","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*5s","*Slept 5 seconds.","*Element Should Contain","*<p>Verifies that element <code>locator\x3c/code> contains text <code>expected\x3c/code>.\x3c/p>","*${TABELA_TRANSFERENCIA}    ${conta_origem}    ${conta_destino}    ${quantidade}","*Element 'css:table[id=\"accountTable\"]' contains text '13344'.","*Fechar o navegador","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*TestCasesUpdateProfile","*c:\\Users\\marqu\\OneDrive\\Documentos\\Parabank\\PageObject\\UpdateProfile\\TestCasesUpdateProfile.robot","eNq9jTESglAMBa/icABfzyAN9FDIAfLxgaj8aBI8v1p6AbqdLXYrOVyN06mYlgdLAE2JwWmOVey1octsbXkTrY7byhzq6MUkSb5/YWaXbhwDw/Miwd7018GZHo04/U8fTZNGUe+2qiD1B8SVUkw=","*QBEF - 02 Tentativa de atualizar o Perfil com campos do formulário vazios","*Negative","*update-profile","*Dado que eu acesse o site Parabank","*setup_teardown","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*url=${URL_DEV}    browser=chrome","*Opening browser 'chrome' to base url '<a href=\"http://parabank.parasoft.com\">http://parabank.parasoft.com\x3c/a>'.","*Maximize Browser Window","*<p>Maximizes current browser window.\x3c/p>","*Dado que o usuário fizer login com Sucesso","*Common","*Quando o usuário preencher os campos de login","*KeywordsLogin","*${USUARIO_VALIDO}    ${SENHA_VALIDO}","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${CAMPO_USUARIO}    ${usuario}","*Typing text 'john' into text field 'css:input[name=\"username\"]'.","*${CAMPO_SENHA}    ${senha}","*Typing text 'demo' into text field 'css:input[name=\"password\"]'.","*Capturar Print Na Pasta Da Funcionalidade","*QBEF-02    PageObject/Login/Screenshots","*Capture Page Screenshot","*<p>Takes a screenshot of the current page and embeds it into a log file.\x3c/p>","*${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"PageObject/Login/Screenshots/QBEF-02.png\"><img src=\"PageObject/Login/Screenshots/QBEF-02.png\" width=\"800px\">\x3c/a>","*Click Button","*<p>Clicks the button identified by <code>locator\x3c/code>.\x3c/p>","*${BOTAO_LOGIN}","*Clicking button 'css:input[type='submit'][value=\"Log In\"]'.","*Então deve ser redirecionado para a página inicial","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${BTN_LOGOUT}    10s","*Element Should Be Visible","*<p>Verifies that the element identified by <code>locator\x3c/code> is visible.\x3c/p>","*${BTN_LOGOUT}","*Element 'css:a[href=\"logout.htm\"]' is displayed.","*E desejo atualizar as informações do meu perfil","*KeywordsUpdateProfile","*${LINK_PERFIL}","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*Clicking element '//*[@id=\"leftPanel\"]/ul/li[6]/a'.","*Quando deixo um ou mais campos vazios","*Sleep","*BuiltIn","*<p>Pauses the test executed for the given time.\x3c/p>","*2s","*Slept 2 seconds.","*${INPUT_LASTNAME}    ${EMPTY}","*Typing text '' into text field '//*[@id=\"customer.lastName\"]'.","*${INPUT_STREET}    ${EMPTY}","*Typing text '' into text field '//*[@id=\"customer.address.street\"]'.","*Então uma mensagem de erro sobre os campos vazios deve ser exibida","*${BOTAO_SALVAR}","*Clicking button '//*[@id=\"updateProfileForm\"]/form/table/tbody/tr[8]/td[2]/input'.","*1s","*Slept 1 second.","*${ERRO_LASTNAME}","*Element '//*[@id=\"lastName-error\"]' is displayed.","*${ERRO_STREET}","*Element '//*[@id=\"street-error\"]' is displayed.","*QBEF-02    PageObject/UpdateProfile/Screenshots","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"PageObject/UpdateProfile/Screenshots/QBEF-02.png\"><img src=\"PageObject/UpdateProfile/Screenshots/QBEF-02.png\" width=\"800px\">\x3c/a>","*Fechar o navegador","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:18","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:18","fail":0,"label":"Positive","pass":1,"skip":0},{"elapsed":"00:00:18","fail":0,"label":"Transfer","pass":1,"skip":0}],[{"elapsed":"00:00:19","fail":0,"id":"s1","label":"TestCasesTransfer","name":"TestCasesTransfer","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:13","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:13","fail":0,"label":"Negative","pass":1,"skip":0},{"elapsed":"00:00:13","fail":0,"label":"update-profile","pass":1,"skip":0}],[{"elapsed":"00:00:13","fail":0,"id":"s1","label":"TestCasesUpdateProfile","name":"TestCasesUpdateProfile","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1750438526051;
+window.output["baseMillis"] = 1750678345303;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 19196;
+window.output["generated"] = 13249;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2214,7 +2204,7 @@ function addExecutionLog(main) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr class="row-${$item.index}">
-    <td class="stats-col-name" title="{{html doc}}">
+    <td class="stats-col-name" title="${doc}">
       <div class="stat-name">
         <span>{{html label}}</span>
         {{if info}}(${info}){{/if}}

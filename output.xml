@@ -45,7 +45,13 @@
 </kw>
 <status status="PASS" start="2025-06-24T18:45:29.786682" elapsed="0.084997"/>
 </kw>
-<kw name="Quando o usuário preencher os campos de login" owner="KeywordsLogin">
+<arg>QBEF-01-step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-06-25T08:41:05.873176" elapsed="0.462643"/>
+</kw>
+<status status="PASS" start="2025-06-25T08:41:05.453435" elapsed="0.882384"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
 <kw name="Input Text" owner="SeleniumLibrary">
 <msg time="2025-06-24T18:45:29.872593" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
 <arg>${CAMPO_USUARIO}</arg>
@@ -73,7 +79,7 @@
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
 <status status="PASS" start="2025-06-24T18:45:30.573863" elapsed="0.161948"/>
 </kw>
-<arg>QBEF-02</arg>
+<arg>QBEF-01-step-02</arg>
 <arg>PageObject/Login/Screenshots</arg>
 <status status="PASS" start="2025-06-24T18:45:30.572442" elapsed="0.163576"/>
 </kw>
@@ -83,6 +89,8 @@
 </kw>
 <kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-06-25T08:41:18.794466" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-25T08:41:18.794466" level="FAIL">Element 'css:a[href="logout.htm"]' not visible after 10 seconds.</msg>
 <arg>${BTN_LOGOUT}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
@@ -221,7 +229,7 @@
 </kw>
 <kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
+<doc>Closes the current browser.</doc>atus="PASS" start="2025-06-25T08:41:18.912554" elapsed="2.332609"/>
 <status status="PASS" start="2025-06-24T18:45:36.720375" elapsed="2.188430"/>
 </kw>
 <status status="PASS" start="2025-06-24T18:45:36.719009" elapsed="2.190368"/>
@@ -234,7 +242,7 @@
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">new-account</stat>

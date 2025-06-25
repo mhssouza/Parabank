@@ -9,5 +9,5 @@ Capturar Print Na Pasta Da Funcionalidade
 
 Fazer login com Sucesso
     Dado que o usuário esteja na tela de Login
-    Quando o usuário preencher os campos de login   ${USUARIO_VALIDO}    ${SENHA_VALIDO}
+    Quando o usuário preencher os campos de usuario e senha   ${USUARIO_VALIDO}    ${SENHA_VALIDO}
     Então deve ser redirecionado para a página inicial

@@ -1,255 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.3 on win32)" generated="2025-06-24T18:45:25.288516" rpa="false" schemaversion="5">
-<suite id="s1" name="TestCasesOpenNewAccount" source="c:\Users\marqu\OneDrive\Documentos\Parabank\PageObject\OpenNewAccount\TestCasesOpenNewAccount.robot">
-<test id="s1-t1" name="QBEF-01 Abertura bem-sucedida de uma nova conta" line="9">
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2025-06-25T12:05:16.402015" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCasesLogin" source="c:\Users\v8\Documents\VS Code\V8TECH\Parabank\PageObject\Login\TestCasesLogin.robot">
+<test id="s1-t1" name="QBEF-03 Login com campos vazios" line="22">
 <kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:25.778010" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<msg time="2025-06-25T12:05:17.365710" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
 <arg>url=${URL_DEV}</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-24T18:45:25.777590" elapsed="3.956356"/>
+<status status="PASS" start="2025-06-25T12:05:17.365192" elapsed="5.151946"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-24T18:45:29.734841" elapsed="0.049074"/>
+<status status="PASS" start="2025-06-25T12:05:22.518092" elapsed="0.093015"/>
 </kw>
-<status status="PASS" start="2025-06-24T18:45:25.776105" elapsed="4.008199"/>
+<status status="PASS" start="2025-06-25T12:05:17.362787" elapsed="5.249321"/>
 </kw>
-<kw name="Dado que o usuário está na página de abertura de conta" owner="KeywordsOpenNewAccount">
-<kw name="Fazer login com Sucesso" owner="Common">
 <kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${CAMPO_USUARIO}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:29.787125" elapsed="0.034750"/>
+<status status="PASS" start="2025-06-25T12:05:22.613107" elapsed="0.072337"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:29.839220" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<msg time="2025-06-25T12:05:22.734788" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
 <arg>${CAMPO_USUARIO}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:29.822179" elapsed="0.017938"/>
+<status status="PASS" start="2025-06-25T12:05:22.685444" elapsed="0.051339"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${CAMPO_SENHA}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:29.840505" elapsed="0.019196"/>
+<status status="PASS" start="2025-06-25T12:05:22.736783" elapsed="0.048536"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:29.871310" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<msg time="2025-06-25T12:05:22.839642" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
 <arg>${CAMPO_SENHA}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:29.860096" elapsed="0.011448"/>
+<status status="PASS" start="2025-06-25T12:05:22.786316" elapsed="0.054312"/>
 </kw>
-<status status="PASS" start="2025-06-24T18:45:29.786682" elapsed="0.084997"/>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-06-25T12:05:23.290132" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-06-25T12:05:22.842151" elapsed="0.449978"/>
 </kw>
-<arg>QBEF-01-step-01</arg>
+<arg>QBEF-01 step-01</arg>
 <arg>PageObject/Login/Screenshots</arg>
-<status status="PASS" start="2025-06-25T08:41:05.873176" elapsed="0.462643"/>
+<status status="PASS" start="2025-06-25T12:05:22.840628" elapsed="0.451501"/>
 </kw>
-<status status="PASS" start="2025-06-25T08:41:05.453435" elapsed="0.882384"/>
+<status status="PASS" start="2025-06-25T12:05:22.613107" elapsed="0.680038"/>
 </kw>
-<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Quando o usuário preencher os campos de usuario e senha vazios" owner="KeywordsLogin">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:29.872593" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<msg time="2025-06-25T12:05:23.298746" level="INFO">Typing text '' into text field 'css:input[name="username"]'.</msg>
 <arg>${CAMPO_USUARIO}</arg>
 <arg>${usuario}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-24T18:45:29.872306" elapsed="0.065631"/>
+<status status="PASS" start="2025-06-25T12:05:23.297741" elapsed="0.205077"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:29.938689" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<msg time="2025-06-25T12:05:23.504388" level="INFO">Typing text '' into text field 'css:input[name="password"]'.</msg>
 <arg>${CAMPO_SENHA}</arg>
 <arg>${senha}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-24T18:45:29.938363" elapsed="0.064827"/>
+<status status="PASS" start="2025-06-25T12:05:23.503878" elapsed="0.225103"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:30.003845" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<msg time="2025-06-25T12:05:23.729982" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
 <arg>${BOTAO_LOGIN}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-24T18:45:30.003495" elapsed="0.568283"/>
+<status status="PASS" start="2025-06-25T12:05:23.729982" elapsed="0.816667"/>
 </kw>
 <kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:30.735107" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PageObject/Login/Screenshots/QBEF-02.png"&gt;&lt;img src="PageObject/Login/Screenshots/QBEF-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-25T12:05:24.988318" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PageObject/Login/Screenshots/QBEF-03%20step-02.png"&gt;&lt;img src="PageObject/Login/Screenshots/QBEF-03%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-24T18:45:30.573863" elapsed="0.161948"/>
+<status status="PASS" start="2025-06-25T12:05:24.547631" elapsed="0.441639"/>
 </kw>
-<arg>QBEF-01-step-02</arg>
+<arg>QBEF-03 step-02</arg>
 <arg>PageObject/Login/Screenshots</arg>
-<status status="PASS" start="2025-06-24T18:45:30.572442" elapsed="0.163576"/>
+<status status="PASS" start="2025-06-25T12:05:24.547631" elapsed="0.441639"/>
 </kw>
-<arg>${USUARIO_VALIDO}</arg>
-<arg>${SENHA_VALIDO}</arg>
-<status status="PASS" start="2025-06-24T18:45:29.871895" elapsed="0.864230"/>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-06-25T12:05:23.294719" elapsed="1.694551"/>
 </kw>
-<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Então deve ver uma mensagem de erro de campos vazios" owner="KeywordsLogin">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-06-25T08:41:18.794466" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-06-25T08:41:18.794466" level="FAIL">Element 'css:a[href="logout.htm"]' not visible after 10 seconds.</msg>
-<arg>${BTN_LOGOUT}</arg>
+<arg>${MENSAGEM_ERRO1}</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:30.736741" elapsed="0.023823"/>
+<status status="PASS" start="2025-06-25T12:05:24.991270" elapsed="0.045400"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:30.771688" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
-<arg>${BTN_LOGOUT}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:30.760848" elapsed="0.011139"/>
-</kw>
-<status status="PASS" start="2025-06-24T18:45:30.736378" elapsed="0.035763"/>
-</kw>
-<status status="PASS" start="2025-06-24T18:45:29.786024" elapsed="0.986201"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LINK_NOVA_CONTA}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:30.772395" elapsed="0.013558"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:30.786522" level="INFO">Clicking element '//*[@id="leftPanel"]/ul/li[1]/a'.</msg>
-<arg>${LINK_NOVA_CONTA}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-24T18:45:30.786239" elapsed="0.678203"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-24T18:45:33.465702" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-24T18:45:31.464883" elapsed="2.001288"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:33.516756" level="INFO">${PRIMEIRA_OPCAO_CONTA} = CHECKING</msg>
-<var>${PRIMEIRA_OPCAO_CONTA}</var>
-<arg>${SELECT_TIPO_CONTA}/option[1]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-24T18:45:33.466551" elapsed="0.050379"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${PRIMEIRA_OPCAO_CONTA}</arg>
-<arg>CHECKING</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-06-24T18:45:33.517155" elapsed="0.000262"/>
+<kw name="Element Should Be Enabled" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO1}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-06-25T12:05:25.036670" elapsed="0.049728"/>
 </kw>
 <kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:33.653748" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PageObject/OpenNewAccount/Screenshots/QBEF-11%20step-01.png"&gt;&lt;img src="PageObject/OpenNewAccount/Screenshots/QBEF-11%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-25T12:05:25.470814" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PageObject/Login/Screenshots/QBEF-03%20step-03.png"&gt;&lt;img src="PageObject/Login/Screenshots/QBEF-03%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-24T18:45:33.517932" elapsed="0.136089"/>
+<status status="PASS" start="2025-06-25T12:05:25.087451" elapsed="0.383363"/>
 </kw>
-<arg>QBEF-11 step-01</arg>
-<arg>PageObject/OpenNewAccount/Screenshots</arg>
-<status status="PASS" start="2025-06-24T18:45:33.517599" elapsed="0.136642"/>
+<arg>QBEF-03 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-06-25T12:05:25.086398" elapsed="0.385721"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${SELECT_TIPO_CONTA}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:33.654481" elapsed="0.022835"/>
-</kw>
-<status status="PASS" start="2025-06-24T18:45:29.785216" elapsed="3.893106"/>
-</kw>
-<kw name="Quando ele solicita a criação de uma nova conta do tipo SAVINGS" owner="KeywordsOpenNewAccount">
-<kw name="Select From List By Label" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:33.679992" level="INFO">Selecting options from selection list '//*[@id="type"]' by label SAVINGS.</msg>
-<arg>${SELECT_TIPO_CONTA}</arg>
-<arg>${TIPO_CONTA}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<status status="PASS" start="2025-06-24T18:45:33.679609" elapsed="0.114648"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-06-24T18:45:35.795228" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-06-24T18:45:33.794549" elapsed="2.001274"/>
-</kw>
-<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:35.940256" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PageObject/OpenNewAccount/Screenshots/QBEF-12%20step-02.png"&gt;&lt;img src="PageObject/OpenNewAccount/Screenshots/QBEF-12%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-24T18:45:35.797264" elapsed="0.143379"/>
-</kw>
-<arg>QBEF-12 step-02</arg>
-<arg>PageObject/OpenNewAccount/Screenshots</arg>
-<status status="PASS" start="2025-06-24T18:45:35.796368" elapsed="0.144492"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:35.941376" level="INFO">Clicking button 'css:input[type="button"][value="Open New Account"]'.</msg>
-<arg>${BOTAO_ABRIR_CONTA}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-24T18:45:35.941088" elapsed="0.071448"/>
-</kw>
-<status status="PASS" start="2025-06-24T18:45:33.679070" elapsed="2.333781"/>
-</kw>
-<kw name="Então a conta deve ser criada com sucesso" owner="KeywordsOpenNewAccount">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${MENSAGEM_SUCESSO_CONTA}</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:36.014284" elapsed="0.483294"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:36.527449" level="INFO">Element '//*[@id="openAccountResult"]/h1' is displayed.</msg>
-<arg>${MENSAGEM_SUCESSO_CONTA}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:36.498199" elapsed="0.029736"/>
-</kw>
-<status status="PASS" start="2025-06-24T18:45:36.013509" elapsed="0.514771"/>
-</kw>
-<kw name="E o número da nova conta deve ser exibido" owner="KeywordsOpenNewAccount">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${NUMERO_NOVA_CONTA}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:36.529834" elapsed="0.029337"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:36.581548" level="INFO">Element '//*[@id="newAccountId"]' is displayed.</msg>
-<arg>${NUMERO_NOVA_CONTA}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-24T18:45:36.559497" elapsed="0.022328"/>
-</kw>
-<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-06-24T18:45:36.716125" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="PageObject/OpenNewAccount/Screenshots/QBEF-13%20step-03.png"&gt;&lt;img src="PageObject/OpenNewAccount/Screenshots/QBEF-13%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-06-24T18:45:36.583242" elapsed="0.133529"/>
-</kw>
-<arg>QBEF-13 step-03</arg>
-<arg>PageObject/OpenNewAccount/Screenshots</arg>
-<status status="PASS" start="2025-06-24T18:45:36.582324" elapsed="0.134905"/>
-</kw>
-<status status="PASS" start="2025-06-24T18:45:36.529397" elapsed="0.188172"/>
+<status status="PASS" start="2025-06-25T12:05:24.991270" elapsed="0.480849"/>
 </kw>
 <kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>atus="PASS" start="2025-06-25T08:41:18.912554" elapsed="2.332609"/>
-<status status="PASS" start="2025-06-24T18:45:36.720375" elapsed="2.188430"/>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-25T12:05:25.473117" elapsed="2.368547"/>
 </kw>
-<status status="PASS" start="2025-06-24T18:45:36.719009" elapsed="2.190368"/>
+<status status="PASS" start="2025-06-25T12:05:25.473117" elapsed="2.368547"/>
 </kw>
-<tag>new-account</tag>
-<tag>Positive</tag>
-<status status="PASS" start="2025-06-24T18:45:25.774264" elapsed="13.136300"/>
+<tag>Login</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-06-25T12:05:17.359838" elapsed="10.483853"/>
 </test>
-<status status="PASS" start="2025-06-24T18:45:25.294926" elapsed="13.618819"/>
+<status status="PASS" start="2025-06-25T12:05:16.418014" elapsed="11.429275"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">new-account</stat>
-<stat pass="1" fail="0" skip="0">Positive</stat>
+<stat pass="1" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">Negative</stat>
 </tag>
 <suite>
-<stat name="TestCasesOpenNewAccount" id="s1" pass="1" fail="0" skip="0">TestCasesOpenNewAccount</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestCasesLogin">TestCasesLogin</stat>
 </suite>
 </statistics>
 <errors>

@@ -15,7 +15,7 @@ Dado que o usuário esteja na página de transferência
     Wait Until Element Is Visible    ${BTN_TRANSFERENCIA}       10s
     Click Element                    ${BTN_TRANSFERENCIA}
     Wait Until Element Is Visible    ${CAMPO_QUANTIDADE}        10s
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-21-step-01     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-21 step-01     PageObject/Transfer/Screenshots
    
 
 E preencher os campos de transferência com os dados completos
@@ -26,7 +26,7 @@ E preencher os campos de transferência com os dados completos
     Select From List By Value        ${OPTION_CONTA_DESTINO}    ${conta_destino}
     Input Text                       ${CAMPO_QUANTIDADE}        ${quantidade}
     Click Button                     ${BTN_TRANSFERIR}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-21-step-02     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-21 step-02     PageObject/Transfer/Screenshots
 
 E preencher os campos de transferência com um dos dados vazios
     [Arguments]                      ${conta_origem}            ${conta_destino}          ${quantidade}
@@ -36,7 +36,7 @@ E preencher os campos de transferência com um dos dados vazios
     Select From List By Value        ${OPTION_CONTA_DESTINO}    ${conta_destino}
     Input Text                       ${CAMPO_QUANTIDADE}        ${quantidade}
     Click Button                     ${BTN_TRANSFERIR}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-22-step-02     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-22 step-02     PageObject/Transfer/Screenshots
 
 E preencher os campos de transferência com o dado de valor negativo
     [Arguments]                      ${conta_origem}            ${conta_destino}          ${quantidade}
@@ -46,7 +46,7 @@ E preencher os campos de transferência com o dado de valor negativo
     Select From List By Value        ${OPTION_CONTA_DESTINO}    ${conta_destino}
     Input Text                       ${CAMPO_QUANTIDADE}        ${quantidade}
     Click Button                     ${BTN_TRANSFERIR}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-23-step-02     PageObject/Transfer/Screenshots    
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-23 step-02     PageObject/Transfer/Screenshots    
 
 E preencher os campos de transferência com o dado de valor em texto
     [Arguments]                      ${conta_origem}            ${conta_destino}          ${quantidade}
@@ -56,12 +56,12 @@ E preencher os campos de transferência com o dado de valor em texto
     Select From List By Value        ${OPTION_CONTA_DESTINO}    ${conta_destino}
     Input Text                       ${CAMPO_QUANTIDADE}        ${quantidade}
     Click Button                     ${BTN_TRANSFERIR}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-24-step-02     PageObject/Transfer/Screenshots    
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-24 step-02     PageObject/Transfer/Screenshots    
 
 Então deve mostrar uma mensagem de sucesso
     Wait Until Element Is Visible    ${MENSAGEM_SUCESSO}        10s
     Element Should Be Visible        ${MENSAGEM_SUCESSO}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-21-step-03     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-21 step-03     PageObject/Transfer/Screenshots
     
 
 E a tranferência deve ser registrada
@@ -71,24 +71,24 @@ E a tranferência deve ser registrada
     Wait Until Element Is Visible    ${TABELA_TRANSFERENCIA}    10s
     Sleep                            5s
     Element Should Contain           ${TABELA_TRANSFERENCIA}    ${conta_origem}            ${conta_destino}          ${quantidade}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-21-step-04     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-21 step-04     PageObject/Transfer/Screenshots
 
 Então deve mostrar uma mensagem de erro pra transferência
     Wait Until Element Is Visible    ${MENSAGEM_ERRO2}           10s
     Element Should Be Enabled        ${MENSAGEM_ERRO2}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-21-step-04     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-21 step-04     PageObject/Transfer/Screenshots
 
 Então deve mostrar uma mensagem de erro pra transferência de campos vazios
     Wait Until Element Is Visible    ${MENSAGEM_ERRO2}           10s
     Element Should Be Enabled        ${MENSAGEM_ERRO2}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-22-step-04     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-22 step-04     PageObject/Transfer/Screenshots
 
 Então deve mostrar uma mensagem de erro pra transferência de valor negativo
     Wait Until Element Is Visible    ${MENSAGEM_ERRO2}           10s
     Element Should Be Enabled        ${MENSAGEM_ERRO2}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-23-step-04     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-23 step-04     PageObject/Transfer/Screenshots
 
 Então deve mostrar uma mensagem de erro pra transferência de valor em texto
     Wait Until Element Is Visible    ${MENSAGEM_ERRO2}           10s
     Element Should Be Enabled        ${MENSAGEM_ERRO2}
-    Capturar Print Na Pasta Da Funcionalidade      QBEF-24-step-04     PageObject/Transfer/Screenshots
+    Capturar Print Na Pasta Da Funcionalidade      QBEF-24 step-04     PageObject/Transfer/Screenshots

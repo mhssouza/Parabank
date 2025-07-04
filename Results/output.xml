@@ -1,0 +1,2811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2025-07-04T10:18:33.299418" rpa="false" schemaversion="5">
+<suite id="s1" name="TestCasesBillPay" source="C:\Users\v8\Documents\VS Code\V8TECH\Parabank\PageObject\BillPay\TestCasesBillPay.robot">
+<test id="s1-t1" name="QBEF-30 Pagamento de contas com sucesso" line="8">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:33.621260" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:18:33.621260" elapsed="3.102368"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:18:36.724629" elapsed="0.031244"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:33.620751" elapsed="3.135122"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:36.757873" elapsed="0.113167"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:36.884038" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:36.871040" elapsed="0.012998"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:36.885039" elapsed="0.016050"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:36.916942" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:36.901089" elapsed="0.016854"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:37.063660" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:36.917943" elapsed="0.145717"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:36.917943" elapsed="0.146717"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:36.756874" elapsed="0.307786"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:37.064660" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:37.064660" elapsed="0.064884"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:37.129544" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:37.129544" elapsed="0.058936"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:37.188480" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:37.188480" elapsed="0.054787"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:38.197416" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:37.243267" elapsed="0.954149"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:37.243267" elapsed="0.954149"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:18:37.064660" elapsed="1.132756"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:38.198414" elapsed="0.017390"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:38.227840" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:38.215804" elapsed="0.012036"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:38.371928" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:38.228893" elapsed="0.143035"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:38.227840" elapsed="0.144088"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:38.197416" elapsed="0.175526"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:36.756874" elapsed="1.616068"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:38.372942" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:38.372942" elapsed="0.486138"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:38.860089" elapsed="0.022715"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.020808" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:38.882804" elapsed="0.138004"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:38.882804" elapsed="0.138004"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:36.756874" elapsed="2.263934"/>
+</kw>
+<kw name="E preencher os campos de pagamento com os dados completos" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.021821" elapsed="0.018366"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.040187" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.040187" elapsed="0.077030"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.118217" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.118217" elapsed="0.076152"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.194369" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.194369" elapsed="0.078406"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.272775" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.272775" elapsed="0.061113"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.333888" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.333888" elapsed="0.061114"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.395002" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.395002" elapsed="0.065795"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.461902" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.460797" elapsed="0.062302"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.524099" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.523099" elapsed="0.067352"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.590451" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.590451" elapsed="0.081136"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.776155" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.672971" elapsed="0.103184"/>
+</kw>
+<arg>QBEF-30 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:39.671587" elapsed="0.104568"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:18:39.020808" elapsed="0.756322"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de sucesso" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:39.778243" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.778243" elapsed="0.058901"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_RESULTADO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:39.837144" elapsed="0.270643"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:40.123334" level="INFO">Element 'css:div[id="billpayResult"]' is displayed.</msg>
+<arg>${MENSAGEM_RESULTADO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:40.107787" elapsed="0.015547"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:40.275462" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:40.124335" elapsed="0.151127"/>
+</kw>
+<arg>QBEF-30 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:40.124335" elapsed="0.151127"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:39.778243" elapsed="0.497219"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:18:40.276521" elapsed="2.191735"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:40.276521" elapsed="2.192611"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Positive</tag>
+<status status="PASS" start="2025-07-04T10:18:33.619326" elapsed="8.849806"/>
+</test>
+<test id="s1-t2" name="QBEF-31 Pagamento de contas com o dado de nome vazio" line="14">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:42.471732" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:18:42.471732" elapsed="2.937651"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.409383" elapsed="0.031587"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:42.471221" elapsed="2.969749"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.441972" elapsed="0.054391"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:45.509370" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.496363" elapsed="0.014008"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.510371" elapsed="0.016350"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:45.541489" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.527725" elapsed="0.013764"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:45.681646" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.541489" elapsed="0.140157"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:45.541489" elapsed="0.140157"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:45.441972" elapsed="0.239674"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:45.682659" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.682659" elapsed="0.068048"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:45.751705" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.751705" elapsed="0.069954"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:45.821659" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.821659" elapsed="0.050927"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:47.186510" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:45.873585" elapsed="1.312925"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:45.872586" elapsed="1.313924"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:18:45.681646" elapsed="1.504864"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:47.187515" elapsed="0.017389"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:47.215886" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:47.204904" elapsed="0.011306"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:47.359619" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:47.216210" elapsed="0.143409"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:47.216210" elapsed="0.143409"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:47.186510" elapsed="0.174311"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:45.441972" elapsed="1.918849"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:47.360821" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:47.360821" elapsed="0.881227"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.242048" elapsed="0.018744"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.391798" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.260792" elapsed="0.131006"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:48.260792" elapsed="0.131006"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:45.440970" elapsed="2.950828"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de nome vazio" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.393304" elapsed="0.020364"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.413668" level="INFO">Typing text '' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.413668" elapsed="0.054676"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.468344" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.468344" elapsed="0.070374"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.540851" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.540223" elapsed="0.069423"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.609646" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.609646" elapsed="0.055087"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.664733" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.664733" elapsed="0.059202"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.724935" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.723935" elapsed="0.066893"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.791782" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.791782" elapsed="0.061664"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.853446" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.853446" elapsed="0.059698"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:48.913144" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.913144" elapsed="0.063607"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:49.085917" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-31%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-31%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:48.976751" elapsed="0.109166"/>
+</kw>
+<arg>QBEF-31 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:48.976751" elapsed="0.109166"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:18:48.393304" elapsed="0.692613"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com o nome vazio" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:49.086929" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:49.086929" elapsed="0.051700"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_NOME}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:49.139621" elapsed="0.014631"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:49.166262" level="INFO">Element 'css:span[id="validationModel-name"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_NOME}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:49.154252" elapsed="0.012010"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:49.273021" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-31%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-31%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:49.166262" elapsed="0.106759"/>
+</kw>
+<arg>QBEF-31 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:49.166262" elapsed="0.106759"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:49.086929" elapsed="0.186092"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:18:49.273984" elapsed="2.184977"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:49.273984" elapsed="2.184977"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:18:42.470209" elapsed="8.989863"/>
+</test>
+<test id="s1-t3" name="QBEF-32 Pagamento de contas com o dado de endereço incompleto" line="20">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:51.461949" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:18:51.461949" elapsed="3.051192"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.513141" elapsed="0.064367"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:51.461949" elapsed="3.115559"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.578512" elapsed="0.031034"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:54.624526" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.609546" elapsed="0.014980"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.624526" elapsed="0.015731"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:54.653018" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.640257" elapsed="0.012761"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:54.774247" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.654019" elapsed="0.121226"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:54.654019" elapsed="0.121226"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:54.578512" elapsed="0.196733"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:54.775245" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.775245" elapsed="0.065357"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:54.840602" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.840602" elapsed="0.063888"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:54.904490" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.904490" elapsed="0.053333"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:55.538127" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:54.958832" elapsed="0.579295"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:54.957823" elapsed="0.580304"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:18:54.775245" elapsed="0.762882"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:55.538127" elapsed="0.017783"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:55.570434" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:55.556915" elapsed="0.013519"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:55.709440" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:55.571435" elapsed="0.139001"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:55.570434" elapsed="0.140002"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:55.538127" elapsed="0.172309"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:54.578512" elapsed="1.131924"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:55.710436" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:55.710436" elapsed="0.853978"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:56.564414" elapsed="0.026298"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:56.721514" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:56.590712" elapsed="0.130802"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:56.590712" elapsed="0.130802"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:54.577508" elapsed="2.144962"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de endereço incompleto" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:56.723583" elapsed="0.015763"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:56.739346" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:56.739346" elapsed="0.070702"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:56.810048" level="INFO">Typing text '' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:56.810048" elapsed="0.062370"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:56.873417" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:56.872418" elapsed="0.067727"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:56.940145" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:56.940145" elapsed="0.059071"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:56.999216" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:56.999216" elapsed="0.065288"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:57.064504" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.064504" elapsed="0.072258"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:57.137741" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.136762" elapsed="0.067708"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:57.204470" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.204470" elapsed="0.068184"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:57.272654" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.272654" elapsed="0.061444"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:57.440578" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-32%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-32%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.335415" elapsed="0.105163"/>
+</kw>
+<arg>QBEF-32 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:57.335415" elapsed="0.105163"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:18:56.722470" elapsed="0.718108"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com o endereço incompleto" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:57.441948" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.441948" elapsed="0.059923"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_ENDERECO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.501871" elapsed="0.014992"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:57.528862" level="INFO">Element 'css:span[id="validationModel-address"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_ENDERECO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.516863" elapsed="0.011999"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:57.645120" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-32%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-32%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.530281" elapsed="0.114839"/>
+</kw>
+<arg>QBEF-32 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:18:57.530281" elapsed="0.114839"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:57.441948" elapsed="0.203172"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:18:57.646117" elapsed="2.198367"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:57.646117" elapsed="2.198367"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:18:51.461064" elapsed="8.383420"/>
+</test>
+<test id="s1-t4" name="QBEF-33 Pagamento de contas com o dado de cidade vazio" line="26">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:18:59.846671" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:18:59.846671" elapsed="3.108314"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:19:02.954985" elapsed="0.041419"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:18:59.846671" elapsed="3.149733"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:02.997471" elapsed="0.029997"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:03.044641" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:03.027468" elapsed="0.017173"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:03.044641" elapsed="0.018505"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:03.077160" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:03.063146" elapsed="0.014014"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:03.229921" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:03.077160" elapsed="0.152761"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:03.077160" elapsed="0.152761"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:02.997471" elapsed="0.232450"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:03.230932" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:03.230932" elapsed="0.061546"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:03.292478" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:03.292478" elapsed="0.061410"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:03.355373" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:03.353888" elapsed="0.057792"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:04.205386" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:03.411680" elapsed="0.793706"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:03.411680" elapsed="0.793706"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:19:03.230932" elapsed="0.974454"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:04.205386" elapsed="0.017553"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:04.234256" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:04.222939" elapsed="0.011317"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:04.358639" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:04.234256" elapsed="0.124383"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:04.234256" elapsed="0.124383"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:04.205386" elapsed="0.153253"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:02.997471" elapsed="1.361168"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:04.359702" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:04.358639" elapsed="0.481711"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:04.840350" elapsed="0.017114"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:04.997913" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:04.858495" elapsed="0.139418"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:04.857464" elapsed="0.140449"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:02.996404" elapsed="2.001509"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de cidade vazio" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:04.999913" elapsed="0.014764"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.014677" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.014677" elapsed="0.091669"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.106346" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.106346" elapsed="0.073153"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.179499" level="INFO">Typing text '' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.179499" elapsed="0.054252"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.234780" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.234780" elapsed="0.059966"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.294746" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.294746" elapsed="0.064002"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.358748" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.358748" elapsed="0.069397"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.429144" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.428145" elapsed="0.063271"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.492416" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.491416" elapsed="0.057746"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.549162" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.549162" elapsed="0.059922"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.710742" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-33%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-33%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.609084" elapsed="0.101658"/>
+</kw>
+<arg>QBEF-33 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:05.609084" elapsed="0.101658"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:19:04.998911" elapsed="0.711831"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com a cidade vazia" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.711746" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.711746" elapsed="0.069321"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_CIDADE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.781067" elapsed="0.015617"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.806691" level="INFO">Element 'css:span[id="validationModel-city"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_CIDADE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.796684" elapsed="0.010007"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:05.891157" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-33%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-33%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.807710" elapsed="0.083447"/>
+</kw>
+<arg>QBEF-33 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:05.807710" elapsed="0.083447"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:05.710742" elapsed="0.180415"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:19:05.892145" elapsed="2.187433"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:05.892145" elapsed="2.187433"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:18:59.845480" elapsed="8.235090"/>
+</test>
+<test id="s1-t5" name="QBEF-34 Pagamento de contas com o dado de estado vazio" line="32">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:08.082570" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:19:08.081569" elapsed="2.660735"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:19:10.742304" elapsed="0.038110"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:08.081569" elapsed="2.698845"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:10.782416" elapsed="0.049836"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:10.847256" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:10.833293" elapsed="0.013963"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:10.848253" elapsed="0.012997"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:10.873595" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:10.861250" elapsed="0.012345"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:11.021217" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:10.873595" elapsed="0.147622"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:10.873595" elapsed="0.147622"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:10.782416" elapsed="0.238801"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:11.021217" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:11.021217" elapsed="0.065087"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:11.086304" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:11.086304" elapsed="0.079838"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:11.166142" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:11.166142" elapsed="0.938646"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:12.225530" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:12.105946" elapsed="0.119584"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:12.104788" elapsed="0.120742"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:19:11.021217" elapsed="1.204313"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:12.226543" elapsed="0.017349"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:12.255770" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:12.243892" elapsed="0.011878"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:12.384336" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:12.255770" elapsed="0.128566"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:12.255770" elapsed="0.128566"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:12.225530" elapsed="0.158806"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:10.781418" elapsed="1.602918"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:12.384336" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:12.384336" elapsed="0.490881"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:12.875217" elapsed="0.022837"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.047375" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:12.899179" elapsed="0.148196"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:12.899179" elapsed="0.148196"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:10.781418" elapsed="2.265957"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de estado vazio" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.049423" elapsed="0.017572"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.066995" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.066995" elapsed="0.072894"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.139889" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.139889" elapsed="0.075601"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.216686" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.215490" elapsed="0.071223"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.286713" level="INFO">Typing text '' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.286713" elapsed="0.059166"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.345879" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.345879" elapsed="0.062466"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.408345" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.408345" elapsed="0.072462"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.480807" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.480807" elapsed="0.074640"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.555771" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.555447" elapsed="0.059685"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.615132" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.615132" elapsed="0.059752"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.766983" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-34%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-34%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.676321" elapsed="0.090662"/>
+</kw>
+<arg>QBEF-34 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:13.676321" elapsed="0.090662"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:19:13.048411" elapsed="0.718572"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com o estado vazio" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.766983" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.766983" elapsed="0.052656"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_ESTADO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.819639" elapsed="0.014746"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.846318" level="INFO">Element 'css:span[id="validationModel-state"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_ESTADO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.834385" elapsed="0.011933"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:13.952146" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-34%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-34%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.846318" elapsed="0.105828"/>
+</kw>
+<arg>QBEF-34 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:13.846318" elapsed="0.105828"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:13.766983" elapsed="0.185163"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:19:13.953158" elapsed="2.204486"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:13.953158" elapsed="2.204486"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:19:08.081569" elapsed="8.077220"/>
+</test>
+<test id="s1-t6" name="QBEF-35 Pagamento de contas com o dado de CEP vazio" line="38">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:16.159796" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:19:16.159796" elapsed="2.631188"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:19:18.790984" elapsed="0.054924"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:16.159796" elapsed="2.686112"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:18.846908" elapsed="0.024292"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:18.885699" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:18.871200" elapsed="0.014499"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:18.885699" elapsed="0.016393"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:18.914605" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:18.902092" elapsed="0.013538"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:19.044129" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:18.915630" elapsed="0.128499"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:18.915630" elapsed="0.128499"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:18.846908" elapsed="0.197221"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:19.045154" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:19.045154" elapsed="0.065040"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:19.111193" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:19.110194" elapsed="0.064133"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:19.174327" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:19.174327" elapsed="1.003023"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:20.333857" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:20.178352" elapsed="0.155505"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:20.178352" elapsed="0.155505"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:19:19.044129" elapsed="1.289728"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:20.333857" elapsed="0.019022"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:20.391455" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:20.352879" elapsed="0.038576"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:20.525656" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:20.392455" elapsed="0.133201"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:20.391455" elapsed="0.135389"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:20.333857" elapsed="0.192987"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:18.846908" elapsed="1.679936"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:20.526844" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:20.526844" elapsed="0.470919"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:20.997763" elapsed="0.020063"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.172495" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.017826" elapsed="0.155669"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:21.017826" elapsed="0.155669"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:18.846908" elapsed="2.326587"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de cep vazio" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.174914" elapsed="0.016410"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.192324" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.192324" elapsed="0.068330"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.260654" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.260654" elapsed="0.074171"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.334825" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.334825" elapsed="0.076631"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.411456" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.411456" elapsed="0.060446"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.472953" level="INFO">Typing text '' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.472953" elapsed="0.053321"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.526274" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.526274" elapsed="0.078667"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.606122" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.606122" elapsed="0.061955"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.668077" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.668077" elapsed="0.058648"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.726725" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.726725" elapsed="0.057040"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.898568" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-35%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-35%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.783765" elapsed="0.114803"/>
+</kw>
+<arg>QBEF-35 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:21.783765" elapsed="0.114803"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:19:21.173495" elapsed="0.725073"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com o cep vazio" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.899568" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.899568" elapsed="0.051733"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_CEP}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.951301" elapsed="0.013218"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:21.974851" level="INFO">Element 'css:span[id="validationModel-zipCode"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_CEP}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.964519" elapsed="0.010332"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:22.077505" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-35%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-35%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:21.974851" elapsed="0.102654"/>
+</kw>
+<arg>QBEF-35 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:21.974851" elapsed="0.102654"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:21.899568" elapsed="0.177937"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:19:22.078921" elapsed="2.188277"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:22.077505" elapsed="2.189693"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:19:16.158789" elapsed="8.109274"/>
+</test>
+<test id="s1-t7" name="QBEF-36 Pagamento de contas com o dado de telefone vazio" line="44">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:24.269547" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:19:24.269547" elapsed="3.037654"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.307201" elapsed="0.037724"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:24.268542" elapsed="3.077521"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.347076" elapsed="0.039688"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:27.403797" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.386764" elapsed="0.017033"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.403797" elapsed="0.016876"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:27.433181" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.420673" elapsed="0.012508"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:27.561678" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.433181" elapsed="0.128497"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:27.433181" elapsed="0.128497"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:27.347076" elapsed="0.214602"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:27.562634" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.562634" elapsed="0.061703"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:27.625347" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.624337" elapsed="0.065425"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:27.689762" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:27.689762" elapsed="0.632403"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:28.471702" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:28.322165" elapsed="0.149537"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:28.322165" elapsed="0.149537"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:19:27.561678" elapsed="0.910024"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:28.472710" elapsed="0.016758"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:28.526451" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:28.489468" elapsed="0.036983"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:28.668170" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:28.526451" elapsed="0.141719"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:28.526451" elapsed="0.141719"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:28.472710" elapsed="0.195460"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:27.347076" elapsed="1.321094"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:28.669202" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:28.669202" elapsed="0.479296"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.148498" elapsed="0.017000"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.300996" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.165498" elapsed="0.135498"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:29.165498" elapsed="0.135498"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:27.346063" elapsed="1.954933"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de telefone vazio" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.303358" elapsed="0.017792"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.321150" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.321150" elapsed="0.066546"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.387696" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.387696" elapsed="0.074341"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.462037" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.462037" elapsed="0.071475"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.533512" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.533512" elapsed="0.055284"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.588796" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.588796" elapsed="0.055588"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.645386" level="INFO">Typing text '' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.645386" elapsed="0.065758"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.711144" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.711144" elapsed="0.058614"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.769758" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.769758" elapsed="0.063154"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.832912" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.832912" elapsed="0.058034"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.990494" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-36%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-36%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.890946" elapsed="0.099548"/>
+</kw>
+<arg>QBEF-36 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:29.890946" elapsed="0.099548"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:19:29.302351" elapsed="0.688143"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com o telefone vazio" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:29.991497" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:29.991497" elapsed="0.055761"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_TELEFONE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:30.047258" elapsed="0.013493"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:30.071881" level="INFO">Element 'css:span[id="validationModel-phoneNumber"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_TELEFONE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:30.060751" elapsed="0.011130"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:30.163316" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-36%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-36%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:30.071881" elapsed="0.091435"/>
+</kw>
+<arg>QBEF-36 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:30.071881" elapsed="0.091435"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:29.991497" elapsed="0.171819"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:19:30.164316" elapsed="2.174802"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:30.164316" elapsed="2.174802"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:19:24.268542" elapsed="8.071446"/>
+</test>
+<test id="s1-t8" name="QBEF-37 Pagamento de contas com o dado de conta vazio" line="50">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:32.341439" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:19:32.341439" elapsed="3.330377"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:19:35.671816" elapsed="0.047204"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:32.341439" elapsed="3.377581"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:35.721501" elapsed="0.050514"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:35.786013" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:35.772015" elapsed="0.013998"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:35.786013" elapsed="0.014999"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:35.817014" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:35.802015" elapsed="0.014999"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:35.975429" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:35.817014" elapsed="0.158415"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:35.817014" elapsed="0.158415"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:35.721501" elapsed="0.253928"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:35.976429" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:35.976429" elapsed="0.059348"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:36.035777" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:36.035777" elapsed="0.063597"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:36.100374" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:36.099374" elapsed="0.987564"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:37.230830" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:37.087940" elapsed="0.142890"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:37.087940" elapsed="0.142890"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:19:35.975429" elapsed="1.255401"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:37.230830" elapsed="0.022569"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:37.279773" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:37.253399" elapsed="0.026374"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:37.422817" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:37.280774" elapsed="0.142043"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:37.280774" elapsed="0.142043"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:37.230830" elapsed="0.191987"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:35.720023" elapsed="1.702794"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:37.422817" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:37.422817" elapsed="0.507071"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:37.929888" elapsed="0.030097"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.076329" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:37.960986" elapsed="0.115343"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:37.959985" elapsed="0.116344"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:35.720023" elapsed="2.356306"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de conta vazio" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.077821" elapsed="0.019901"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.097722" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.097722" elapsed="0.071778"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.169500" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.169500" elapsed="0.075805"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.245305" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.245305" elapsed="0.075309"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.320614" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.320614" elapsed="0.056466"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.378080" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.377080" elapsed="0.061163"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.438243" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.438243" elapsed="0.070589"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.508832" level="INFO">Typing text '' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.508832" elapsed="0.059619"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.568451" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.568451" elapsed="0.059703"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.629156" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.628154" elapsed="0.067257"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.810172" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-37%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-37%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.695411" elapsed="0.114761"/>
+</kw>
+<arg>QBEF-37 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:38.695411" elapsed="0.114761"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:19:38.077821" elapsed="0.733583"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com a conta vazia" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.812429" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.812429" elapsed="0.058636"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_CONTA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.872066" elapsed="0.014528"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.897597" level="INFO">Element 'css:span[id="validationModel-account-empty"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_CONTA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.887595" elapsed="0.010002"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:38.999377" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-38%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-38%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:38.898599" elapsed="0.100778"/>
+</kw>
+<arg>QBEF-38 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:38.898599" elapsed="0.100778"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:38.811404" elapsed="0.187973"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:19:39.000375" elapsed="2.194923"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:39.000375" elapsed="2.194923"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:19:32.339988" elapsed="8.856462"/>
+</test>
+<test id="s1-t9" name="QBEF-38 Pagamento de contas com o dado de verificar conta vazio" line="57">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:41.198455" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:19:41.198455" elapsed="2.923327"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.121782" elapsed="0.069922"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:41.197487" elapsed="2.994217"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.193702" elapsed="0.023783"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:44.231769" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.218489" elapsed="0.013280"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.232821" elapsed="0.016456"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:44.261210" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.249277" elapsed="0.011933"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:44.416606" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.262169" elapsed="0.154437"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:44.261210" elapsed="0.155396"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:44.193702" elapsed="0.222904"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:44.417656" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.417656" elapsed="0.059810"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:44.478466" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.477466" elapsed="0.061887"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:44.539353" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.539353" elapsed="0.056400"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:45.385250" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:44.596757" elapsed="0.788493"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:44.595753" elapsed="0.789497"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:19:44.416606" elapsed="0.968644"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:45.385250" elapsed="0.019878"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:45.433750" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:45.405128" elapsed="0.029620"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:45.565941" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:45.434748" elapsed="0.131193"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:45.434748" elapsed="0.131193"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:45.385250" elapsed="0.180691"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:44.192701" elapsed="1.373240"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:45.565941" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:45.565941" elapsed="0.873601"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.439542" elapsed="0.030948"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:46.593412" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.471508" elapsed="0.121904"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:46.470490" elapsed="0.122922"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:44.192701" elapsed="2.400711"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de verificar conta vazio" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.595410" elapsed="0.016458"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:46.612820" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.611868" elapsed="0.069707"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:46.682591" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.682591" elapsed="0.077532"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:46.760123" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.760123" elapsed="0.075782"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:46.835905" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.835905" elapsed="0.055685"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:46.892590" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.892590" elapsed="0.062006"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:46.955596" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:46.954596" elapsed="0.076167"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:47.031762" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.030763" elapsed="0.062575"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:47.094337" level="INFO">Typing text '' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.093338" elapsed="0.058205"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:47.151543" level="INFO">Typing text '900' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.151543" elapsed="0.060068"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:47.327862" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-38%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-38%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.212613" elapsed="0.115249"/>
+</kw>
+<arg>QBEF-38 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:47.211611" elapsed="0.116251"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${EMPTY}</arg>
+<arg>${VALOR_QUANTIDADE}</arg>
+<status status="PASS" start="2025-07-04T10:19:46.594422" elapsed="0.733440"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com a verificar conta vazia" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:47.329016" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.329016" elapsed="0.056286"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_VERIFICAR_CONTA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.385302" elapsed="0.015590"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:47.413891" level="INFO">Element 'css:span[id="validationModel-verifyAccount-empty"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_VERIFICAR_CONTA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.400892" elapsed="0.012999"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:47.519569" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-39%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-39%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.413891" elapsed="0.105678"/>
+</kw>
+<arg>QBEF-39 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:47.413891" elapsed="0.105678"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:47.329016" elapsed="0.190553"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:19:47.520690" elapsed="2.198610"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:47.520690" elapsed="2.198610"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:19:41.196450" elapsed="8.523765"/>
+</test>
+<test id="s1-t10" name="QBEF-39 Pagamento de contas com o dado de quantidade vazio" line="63">
+<kw name="Dado que eu acesse o site Parabank" owner="setup_teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:49.721215" level="INFO">Opening browser 'chrome' to base url 'http://parabank.parasoft.com'.</msg>
+<arg>url=${URL_DEV}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-04T10:19:49.721215" elapsed="3.024274"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-04T10:19:52.745489" elapsed="0.064458"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:49.720215" elapsed="3.089732"/>
+</kw>
+<kw name="Dado que o usuário esteja na página de pagamento de contas" owner="KeywordsBillPay">
+<kw name="Fazer login com Sucesso" owner="Common">
+<kw name="Dado que o usuário esteja na tela de Login" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:52.810948" elapsed="0.026064"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:52.852319" level="INFO">Element 'css:input[name="username"]' is displayed.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:52.837012" elapsed="0.015307"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:52.852319" elapsed="0.017079"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:52.900612" level="INFO">Element 'css:input[name="password"]' is displayed.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:52.869398" elapsed="0.031214"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:53.049516" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-01.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:52.900612" elapsed="0.148904"/>
+</kw>
+<arg>QBEF-01 step-01</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:52.900612" elapsed="0.148904"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:52.810948" elapsed="0.238568"/>
+</kw>
+<kw name="Quando o usuário preencher os campos de usuario e senha" owner="KeywordsLogin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:53.050579" level="INFO">Typing text 'john' into text field 'css:input[name="username"]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:53.050579" elapsed="0.054449"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:53.106189" level="INFO">Typing text 'demo' into text field 'css:input[name="password"]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:53.105028" elapsed="0.062383"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:53.167411" level="INFO">Clicking button 'css:input[type='submit'][value="Log In"]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:53.167411" elapsed="0.053681"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:54.152186" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-02.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:53.221092" elapsed="0.931094"/>
+</kw>
+<arg>QBEF-01 step-02</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:53.221092" elapsed="0.931094"/>
+</kw>
+<arg>${USUARIO_VALIDO}</arg>
+<arg>${SENHA_VALIDO}</arg>
+<status status="PASS" start="2025-07-04T10:19:53.050579" elapsed="1.101607"/>
+</kw>
+<kw name="Então deve ser redirecionado para a página inicial" owner="KeywordsLogin">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGOUT}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:54.153185" elapsed="0.016558"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:54.181740" level="INFO">Element 'css:a[href="logout.htm"]' is displayed.</msg>
+<arg>${BTN_LOGOUT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:54.170743" elapsed="0.010997"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:54.320373" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/Login/Screenshots/QBEF-01%20step-03.png"&gt;&lt;img src="../PageObject/Login/Screenshots/QBEF-01%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:54.182739" elapsed="0.137634"/>
+</kw>
+<arg>QBEF-01 step-03</arg>
+<arg>PageObject/Login/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:54.182739" elapsed="0.137634"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:54.152186" elapsed="0.168187"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:52.810948" elapsed="1.509425"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:54.321324" level="INFO">Clicking element 'css:a[href="billpay.htm"]'.</msg>
+<arg>${BTN_PAGAMENTO_CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:54.320373" elapsed="0.490846"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TABELA_PAGAMENTO_CONTAS}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:54.812214" elapsed="0.021887"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:54.985795" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-30%20step-01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:54.834101" elapsed="0.151694"/>
+</kw>
+<arg>QBEF-30 step-01</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:54.834101" elapsed="0.151694"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:52.809947" elapsed="2.175848"/>
+</kw>
+<kw name="E preencher os campos de pagamento com o dado de quantidade vazio" owner="KeywordsBillPay">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NOME_PAYEE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:54.987852" elapsed="0.015178"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.003030" level="INFO">Typing text 'John Doe' into text field 'css:input[name="payee.name"]'.</msg>
+<arg>${NOME_PAYEE}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.003030" elapsed="0.094868"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.097898" level="INFO">Typing text '123 Elm St' into text field 'css:input[name="payee.address.street"]'.</msg>
+<arg>${CAMPO_ENDERECO}</arg>
+<arg>${endereco}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.097898" elapsed="0.071104"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.169002" level="INFO">Typing text 'Springfield' into text field 'css:input[name="payee.address.city"]'.</msg>
+<arg>${CAMPO_CIDADE}</arg>
+<arg>${cidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.169002" elapsed="0.069073"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.238075" level="INFO">Typing text 'IL' into text field 'css:input[name="payee.address.state"]'.</msg>
+<arg>${CAMPO_ESTADO}</arg>
+<arg>${estado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.238075" elapsed="0.053161"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.291236" level="INFO">Typing text '62704' into text field 'css:input[name="payee.address.zipCode"]'.</msg>
+<arg>${CAMPO_CEP}</arg>
+<arg>${cep}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.291236" elapsed="0.084278"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.375514" level="INFO">Typing text '555-1234' into text field 'css:input[name="payee.phoneNumber"]'.</msg>
+<arg>${CAMPO_TELEFONE}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.375514" elapsed="0.076681"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.453615" level="INFO">Typing text '13344' into text field 'css:input[name="payee.accountNumber"]'.</msg>
+<arg>${CAMPO_CONTA}</arg>
+<arg>${conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.453615" elapsed="0.054738"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.509349" level="INFO">Typing text '13344' into text field 'css:input[name="verifyAccount"]'.</msg>
+<arg>${CAMPO_VERIFICAR_CONTA}</arg>
+<arg>${verificar_conta}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.509349" elapsed="0.057545"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.567905" level="INFO">Typing text '' into text field 'css:input[name="amount"]'.</msg>
+<arg>${CAMPO_QUANTIDADE}</arg>
+<arg>${quantidade}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.567905" elapsed="0.050372"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.722709" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-39%20step-02.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-39%20step-02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.618277" elapsed="0.104432"/>
+</kw>
+<arg>QBEF-39 step-02</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:55.618277" elapsed="0.104432"/>
+</kw>
+<arg>${VALOR_NOME_PAYEE}</arg>
+<arg>${VALOR_ENDERECO}</arg>
+<arg>${VALOR_CIDADE}</arg>
+<arg>${VALOR_ESTADO}</arg>
+<arg>${VALOR_CEP}</arg>
+<arg>${VALOR_TELEFONE}</arg>
+<arg>${VALOR_CONTA}</arg>
+<arg>${VALOR_VERIFICAR_CONTA}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-07-04T10:19:54.986848" elapsed="0.735861"/>
+</kw>
+<kw name="Então deve mostrar uma mensagem de erro com a quantidade vazia" owner="KeywordsBillPay">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.723730" level="INFO">Clicking element 'css:input[type="button"][value="Send Payment"]'.</msg>
+<arg>${BOTAO_ENVIAR_PAGAMENTO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.723730" elapsed="0.054905"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO_QUANTIDADE}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.778635" elapsed="0.013997"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.805634" level="INFO">Element 'css:span[id="validationModel-amount-empty"]' is displayed.</msg>
+<arg>${MENSAGEM_ERRO_QUANTIDADE}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.792632" elapsed="0.013002"/>
+</kw>
+<kw name="Capturar Print Na Pasta Da Funcionalidade" owner="Common">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-04T10:19:55.896375" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../PageObject/BillPay/Screenshots/QBEF-37%20step-03.png"&gt;&lt;img src="../PageObject/BillPay/Screenshots/QBEF-37%20step-03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/${caminho_da_pasta}/${nome_arquivo}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.806642" elapsed="0.089733"/>
+</kw>
+<arg>QBEF-37 step-03</arg>
+<arg>PageObject/BillPay/Screenshots</arg>
+<status status="PASS" start="2025-07-04T10:19:55.805634" elapsed="0.090741"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:55.723730" elapsed="0.172645"/>
+</kw>
+<kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-04T10:19:55.897374" elapsed="2.178205"/>
+</kw>
+<status status="PASS" start="2025-07-04T10:19:55.897374" elapsed="2.178205"/>
+</kw>
+<tag>BillPay</tag>
+<tag>Negative</tag>
+<status status="PASS" start="2025-07-04T10:19:49.720215" elapsed="8.356365"/>
+</test>
+<status status="PASS" start="2025-07-04T10:18:33.301430" elapsed="84.777154"/>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="10" fail="0" skip="0">BillPay</stat>
+<stat pass="9" fail="0" skip="0">Negative</stat>
+<stat pass="1" fail="0" skip="0">Positive</stat>
+</tag>
+<suite>
+<stat pass="10" fail="0" skip="0" id="s1" name="TestCasesBillPay">TestCasesBillPay</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

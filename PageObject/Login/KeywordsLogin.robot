@@ -21,22 +21,22 @@ Quando o usuário preencher os campos de usuario e senha
     [Arguments]                      ${usuario}                ${senha}
     Input Text                       ${CAMPO_USUARIO}          ${usuario}
     Input Text                       ${CAMPO_SENHA}            ${senha}
-    Click Button                     ${BOTAO_LOGIN}
     Capturar Print Na Pasta Da Funcionalidade      QBEF-01 step-02     PageObject/Login/Screenshots
+    Click Button                     ${BOTAO_LOGIN}
 
 Quando o usuário preencher os campos de usuario e senha inválidos
     [Arguments]                      ${usuario}                ${senha}
     Input Text                       ${CAMPO_USUARIO}          ${usuario}
     Input Text                       ${CAMPO_SENHA}            ${senha}
-    Click Button                     ${BOTAO_LOGIN}
     Capturar Print Na Pasta Da Funcionalidade      QBEF-02 step-02     PageObject/Login/Screenshots
+    Click Button                     ${BOTAO_LOGIN}
 
 Quando o usuário preencher os campos de usuario e senha vazios
     [Arguments]                      ${usuario}                ${senha}
     Input Text                       ${CAMPO_USUARIO}          ${usuario}
     Input Text                       ${CAMPO_SENHA}            ${senha}
-    Click Button                     ${BOTAO_LOGIN}
     Capturar Print Na Pasta Da Funcionalidade      QBEF-03 step-02     PageObject/Login/Screenshots
+    Click Button                     ${BOTAO_LOGIN}
 
 Então deve ser redirecionado para a página inicial
     Wait Until Element Is Visible    ${BTN_LOGOUT}             10s
